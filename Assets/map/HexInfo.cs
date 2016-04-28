@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
 
-public class HexInfo{
+public class HexInfo { 
 
     private Vector3 gridPosition; // Cube coordinates stored(x, y == axial)
     public Vector3 localPosition;
@@ -18,6 +19,10 @@ public class HexInfo{
     public int[] triangles;
     public Vector2[] uv;
 
+    #region update
+
+   
+    #endregion
     // Get axial grid position
     public Vector2 AxialGridPosition
     {
@@ -46,5 +51,16 @@ public class HexInfo{
 
         localMesh.RecalculateNormals();
     }
-	
+
+    void fixedUpdate()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Camera.main.nearClipPlane, Input.mousePosition.z));
+        }
+    }
+
+
+
+
 }

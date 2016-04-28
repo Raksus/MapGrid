@@ -213,15 +213,6 @@ public class WorldManager : MonoBehaviour {
 
     #endregion
 
-    #region update
+    
 
-    void fixedUpdate()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Camera.main.nearClipPlane, Input.mousePosition.z));
-            print("Click");
-        }
-    }
-    #endregion
 }
